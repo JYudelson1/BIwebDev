@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<head>
+  <title>Auth test</title>
+</head>
+<body>
+<form>
+  <input type="email" name="em" id="em"></input>
+  <input type="password" name="pw" id="pw"></input>
+  <input type="button" name="b" id='btn'></input>
+</form>
+
+  <script src="https://www.gstatic.com/firebasejs/5.5.7/firebase.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.5.7/firebase-app.js"></script>
+
+  <script src="https://www.gstatic.com/firebasejs/5.5.7/firebase-auth.js"></script>
+
+  <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyBGjfBmwZObAYFy2_R0R1ZXx9fvATWoZW0",
+      authDomain: "auth-test-92179.firebaseapp.com",
+      databaseURL: "https://auth-test-92179.firebaseio.com",
+      projectId: "auth-test-92179",
+      storageBucket: "auth-test-92179.appspot.com",
+      messagingSenderId: "114251113184"
+    };
+    firebase.initializeApp(config);
+    //firebase.auth();
+
+    function yuppers(){
+      console.log("YUP");
+      firebase.auth().createUserWithEmailAndPassword(document.getElementById('em').value, document.getElementById('pw').value)
+    .catch(function(error) {
+  // Handle Errors here.
+  var errorCode = error.code;
+  var errorMessage = error.message;
+  if (errorCode == 'auth/weak-password') {
+    alert('The password is too weak.');
+  } else {
+    alert(errorMessage);
+  }
+  console.log(error);
+});}
+
+document.getElementById('btn').onclick = yuppers();
+  </script>
+</body>

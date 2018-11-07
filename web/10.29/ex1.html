@@ -1,0 +1,59 @@
+<!DOCTYPE HTML>
+<head>
+	<title>Exercise</title>
+	<style>
+		.center{
+			margin:auto;
+			width:50%;
+			text-align:left;
+		}
+		.specify {
+   			 display: none;
+  		}
+
+		#other:checked + .specify {
+		   	 display: block;
+		}
+	</style>
+</head>
+<body>
+	
+	<form class="center">
+		<h1 class="center">Form:</h1>
+		<br />
+		<br />
+		<div class="center">
+			<span>Name: </span>
+			<input type="text" placeholder="First Name" required="required" />
+			<input type="text" placeholder="Last Name" required="required" />
+			<br />
+			<br />
+			<span>DOB: <input type="date"  required="required" /> </span>
+			<br />
+			<br />
+			<span>Email: <input type="email"  required="required" /> </span>
+			<br />
+			<br />
+			<span>Password: <input type="password"  required="required" /> </span>
+			<br />
+			<br />
+			<span>Repeat password: <input type="password"  required="required" /> </span>
+			<br />
+			<p>Hobbies:</p>
+			<input type="checkbox" name="vehicle1"> Singing<br>
+			<input type="checkbox" name="vehicle2"> Dancing<br>
+			<input type="checkbox" name="vehicle3"> Demon Summoning<br>
+			<br />
+			<p>Gender:</p>
+			<input type="radio" name="gender" value="male"> Male<br>
+			<input type="radio" name="gender" value="female"> Female<br>
+			<input type="radio" name="gender" value="other" id="other" checked="checked"> Other
+			<br />
+			<input type="text" placeholder="Please Specify" class="specify"/>
+			<br class="specify" />
+			<br />
+			<input type="reset" />
+			<input type="submit" />
+		</div>
+	</form>
+</body>

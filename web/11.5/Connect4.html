@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<head>
+  <title>Connect 4</title>
+  <style >
+  body{
+    background-color: lawngreen;
+  }
+  h1{
+    text-align:center;
+  }
+    td h1{
+     font-size: 10em;
+    }
+    #container{
+        display:block;
+        margin: 0px auto;
+        background-color: white;
+        border: 10px solid grey;
+        width:100%;
+        position: relative;
+        box-shadow: 0px 10px 30px grey;
+    }
+    #board{
+      width:100%;
+      margin: auto;
+      height:400px;
+    }
+    #board td{
+      width:14%;
+      height: 10%;
+      background-color: white;
+      padding: 2%;
+      border: 1px solid black;
+      border-radius:100px;
+    }
+
+    #outer{
+      width:100%;
+    }
+  </style>
+
+</head>
+<body>
+  <h1>Connect 4:</h1>
+  <table id="outer">
+    <td style='width:25%'><h1 id='blue' style='backgroundColor:blue'>0</h1></td>
+        <td style='width:50%'><div id="container">
+          <table id="board"></table>
+        </div></td>
+    <td style='width:25%'><h1 id='yellow' style='backgroundColor:yellow'>0</h1></td>
+</table>
+      <br/>
+      <br/>
+      <form style='text-align:center;'>Reset: <input type="button" id="btn"></input></form>
+
+<script src="https://www.gstatic.com/firebasejs/5.5.7/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyBySaHgv_g_vJGHo9CboQbR0JOuhvt12m0",
+    authDomain: "chess-test-a0631.firebaseapp.com",
+    databaseURL: "https://chess-test-a0631.firebaseio.com",
+    projectId: "chess-test-a0631",
+    storageBucket: "chess-test-a0631.appspot.com",
+    messagingSenderId: "7572911501"
+  };
+  firebase.initializeApp(config);
+</script>
+      <script type="text/javascript">
+        var i;
+        for (i = 0; i < 6; i++) {
+          var newRow = document.createElement('tr');
+          var j;
+          for (j = 0; j < 7; j++) {
+            newRow.appendChild(document.createElement('td'));
+          }
+          document.getElementById('board').appendChild(newRow);
+        }
+      </script>
+      <script src="connect4Script.js"></script>
+</body>

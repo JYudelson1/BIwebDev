@@ -1,0 +1,84 @@
+<!DOCTYPE HTML>
+<head>
+    <title>Responsive Menu</title>
+    <style>
+        h1{
+         text-align:center;
+        }
+        flooble{
+          box-shadow: 0px 10px 30px grey;
+        }
+        #container{
+            display:block;
+            margin: 0 auto;
+            background-color: white;
+            border: 10px solid grey;
+            width:80%;
+            position: relative;
+        }
+        .inner{
+            width:20.5%;
+            height:100px;
+            margin: 5px 2% 5px 2%;
+            background-color:#ADD8E6;
+            text-align: center;
+            display:inline-block;
+            box-shadow: inset 0px 0px 10px grey;
+            line-height: 100px;
+            border-radius: 10px;
+        }
+
+        #last{
+            margin-right:0px
+        }
+        @media (max-width:500px){
+            .inner{
+                width:90%;
+                display:block;
+                margin:10px auto;
+            }
+            #last{
+                margin:10px auto;
+            }
+        }
+
+        @keyframes check {
+            from{
+                background-color: #ADD8E6;
+            }
+            to{
+                background-color: red;
+            }
+        }
+        .inner:hover{
+            animation-name: check;
+            animation-duration: 3s;
+            animation-iteration-count: infinite;
+        }
+    </style>
+    <script>
+      function foo(){
+        //console.log('yeah');
+        var x = document.getElementById('last');
+        var newX = document.createElement('span');
+        newX.innerText="Fooled ya!"
+        x.innerText='';
+        x.style.boxShadow = '1px 1px 3px blue,2px 2px 3px green,3px 3px 3px red';
+        newX.style.color = "pink";
+        x.appendChild(newX);
+      }
+
+    </script>
+</head>
+<body>
+
+<h1>Tasks:</h1>
+    <flooble id="container">
+
+        <a href="mailto:leahtempelberg@gmail.com?Subject=Hello"><div class="inner">Email Leah</div></a>
+        <div class="inner" onclick="console.log('Yup!')">B</div>
+        <div class="inner">C</div>
+        <div class="inner" id="last" onclick="foo()">D</div>
+    </flooble>
+
+</body>

@@ -1,0 +1,46 @@
+<!DOCTYPE HTML>
+<head>
+    <title>4 squares</title>
+    <style>
+        #container{
+            display:block;
+            margin: 0 auto;
+            border: 1px solid black;
+            width:80%;
+            height:300px;
+            position: relative;
+        }
+        .inner{
+            width:10%;
+            height:10%;
+            background-color:#ADD8E6;
+            position: absolute;
+            display:inline-block;
+        }
+        
+        #topLeft{
+            top:0;
+            left:0;
+        }
+        #topRight{
+            top:0;
+            right:0;
+        }
+        #bottomLeft{
+            bottom:0;
+            left:0;
+        }
+        #bottomRight{
+            bottom:0;
+            right:0;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div class="inner" id="topLeft">&nbsp;</div>
+        <div class="inner" id="topRight">&nbsp;</div>
+        <div class="inner" id="bottomLeft">&nbsp;</div>
+        <div class="inner" id="bottomRight">&nbsp;</div>
+    </div>
+</body>
